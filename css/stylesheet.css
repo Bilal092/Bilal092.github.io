@@ -84,20 +84,15 @@ a {
   font-size: 14px;
 }
 
-<style>
-.content {
-  max-width: 500px;
-  margin: auto;
+/* updated body to center webpage */
+body {
+  display: flex;
+  justify-content: center;   /* horizontal centering */
+  align-items: center;       /* vertical centering */
+  min-height: 100vh;         /* full height */
+  margin: 0;                 /* remove default margin */
+  text-align: center;        /* center text */
 }
-</style>
-<body>
-
-<div class="content">
-  <!-- Page content -->
-</div>
-
-</body>
-
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;

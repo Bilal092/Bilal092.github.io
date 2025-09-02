@@ -84,6 +84,21 @@ a {
   font-size: 14px;
 }
 
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+</style>
+<body>
+
+<div class="content">
+  <!-- Page content -->
+</div>
+
+</body>
+
+
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;

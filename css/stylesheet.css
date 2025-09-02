@@ -152,7 +152,7 @@ body {
   margin: 0;
   padding: 20px;
   width: min(900px, 100%);   /* nice readable width on desktop, fluid on mobile */
-  text-align: center;        /* center headings/short text */
+  text-align: left;        /* center headings/short text */
 }
 
 /* If your layout uses tables, keep them centered */

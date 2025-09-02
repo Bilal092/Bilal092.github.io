@@ -142,8 +142,8 @@ span.highlight {
 
 /* ---------- Center the webpage but keep text left-aligned ---------- */
 body {
-  margin: 0 auto;             /* centers the page horizontally */
+  margin: 20px auto;          /* centers the page horizontally */
   padding: 20px;
-  max-width: 900px;           /* constrains width */
+  display: inline-block;      /* shrink-wrap width to text/content */
   text-align: left;           /* keeps text left-aligned */
 }

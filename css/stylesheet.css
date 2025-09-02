@@ -140,28 +140,10 @@ span.highlight {
   border-radius: 10px;
 }
 
-/* ---------- Center the webpage (no HTML changes needed) ---------- */
-/* Make the root act like a centering container */
-html {
-  display: flex;
-  justify-content: center;   /* center the page horizontally */
-}
-
-/* Constrain and center the page content */
+/* ---------- Center the webpage but keep text left-aligned ---------- */
 body {
-  margin: 0;
+  margin: 0 auto;             /* centers the page horizontally */
   padding: 20px;
-  width: min(900px, 100%);   /* nice readable width on desktop, fluid on mobile */
-  text-align: left;        /* center headings/short text */
-}
-
-/* If your layout uses tables, keep them centered */
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Keep long entries (like publication items) readable */
-ul, ol, td {
-  text-align: left;
+  max-width: 900px;           /* constrains width */
+  text-align: left;           /* keeps text left-aligned */
 }

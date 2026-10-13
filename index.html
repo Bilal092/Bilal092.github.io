@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Bilal Riaz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bilal Riaz: machine learning researcher working on optimal transport and generative models for antibody design.">
+  <meta name="description" content="Bilal Riaz is a machine learning researcher working on reinforcement learning, generative models, and optimal transport, with a focus on antibody design.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 30V17M16 17 7 4M16 17 25 4' stroke='%230e6e8c' stroke-width='5' stroke-linecap='round' fill='none'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,14 +18,15 @@
       <img class="portrait" src="assets/bilal.jpg" alt="Portrait of Bilal Riaz" width="132" height="132">
       <div>
         <h1>Bilal Riaz</h1>
-        <p class="role">Machine learning researcher, UNC Charlotte</p>
+        <p class="role">Machine learning Postdoc@UNC Charlotte</p>
       </div>
     </header>
 
     <p class="lede">
-      I build methods that move probability mass where it should go: optimal
-      transport for comparing and aligning datasets, and finetuned diffusion
-      models that steer protein generation toward better antibodies.
+      I develop methods for moving probability mass toward meaningful targets.
+      My work spans reinforcement learning, generative models, and optimal
+      transport, with a current focus on using reward signals to guide
+      pretrained diffusion models for antibody design.
     </p>
 
     <nav class="links" aria-label="Profiles">
@@ -38,8 +39,8 @@
     <figure class="flow">
       <canvas id="flow" aria-label="Animated particles flowing from a Gaussian cloud into the shape of an antibody" role="img"></canvas>
       <figcaption>
-        <span>Sliced Wasserstein flow: each step projects the particles onto a random
-        line, sorts them, and nudges each one toward its matched quantile of the target.</span>
+        <span>Sliced Wasserstein flow: at each step, particles are projected onto a
+        randomly chosen line, sorted, and moved toward their corresponding target quantiles.</span>
         <span class="targets" role="group" aria-label="Choose target distribution">
           <button type="button" data-target="antibody" aria-pressed="true">Antibody</button>
           <button type="button" data-target="initials" aria-pressed="false">Initials</button>
@@ -54,22 +55,31 @@
         <article>
           <h3>Generative models for antibody design</h3>
           <p>
-            I work on finetuning diffusion models for antibody CDR design using Reinforcment Learning. More
-            Specifically, use policy gradient methods to finetune discrete time diffusion models. 
+            During Postdoc I use reinforcement learning to fine-tune diffusion models for
+            antibody CDR design. I treat each discrete denoising step as a
+            policy action and optimize the resulting trajectory with
+            policy-gradient methods.
           </p>
         </article>
         <article>
           <h3>Optimal transport for learning</h3>
           <p>
-            My PhD work at the University of Delaware used partial, neural and
-            sliced optimal transport to select subsets, align distributions,
-            and find where two datasets disagree under covariate shift.
+            During my PhD at the University of Delaware, I developed methods
+            based on partial, neural, and sliced optimal transport to select
+            relevant subsets, align distributions, and identify differences
+            between datasets under covariate shift.
           </p>
         </article>
       </div>
+      <p class="reading">
+        I am also interested in mean field games and mean-field-type
+        reinforcement learning. These frameworks describe large populations
+        of interacting agents through their collective distribution rather
+        than modeling each agent individually.
+      </p>
       <p class="earlier">
-        Before machine learning, I worked on Lyapunov and optimal control of
-        quantum gates and open quantum systems.
+        Earlier in my career, I worked on Lyapunov-based methods and optimal
+        control for quantum gates and open quantum systems.
       </p>
     </section>
 
@@ -91,14 +101,6 @@
           <div>
             <p class="title">Finding Landmarks of Covariate Shift with Kernel Landmark Sliced Wasserstein Distance</p>
             <p class="authors">Yuksel Karahan, <b>Bilal Riaz</b>, Hau Phan, Matthew S. Emigh, Austin J. Brockmeier</p>
-            <p class="venue">Submitted to TMLR</p>
-          </div>
-        </li>
-        <li>
-          <span class="when" aria-hidden="true"></span>
-          <div>
-            <p class="title">Distributional Landmark for Detecting Multi-Mode Discrepancies</p>
-            <p class="authors">Yuksel Karahan, <b>Bilal Riaz</b>, Matthew S. Emigh, Austin J. Brockmeier</p>
             <p class="venue">Under review</p>
           </div>
         </li>
@@ -156,11 +158,11 @@
         </li>
       </ol>
 
-      <p class="more">Full details are in my <a href="assets/Bilal_Riaz_CV.pdf">CV</a>.</p>
+      <p class="more">For full publication details, see my <a href="assets/Bilal_Riaz_CV.pdf">CV</a>.</p>
     </section>
 
     <footer class="foot">
-      <p>Built by hand and hosted on GitHub Pages.</p>
+      <p>Designed and built by me; hosted on GitHub Pages.</p>
     </footer>
   </main>
 

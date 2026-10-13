@@ -1,71 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Bilal Riaz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bilal Riaz: machine learning researcher working on optimal transport and generative models for antibody design.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 30V17M16 17 7 4M16 17 25 4' stroke='%230e6e8c' stroke-width='5' stroke-linecap='round' fill='none'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
-  <div class="container">
-    <img src="assets/bilal.jpg" alt="Bilal Riaz" width="200" height="200"
-      style="border-radius: 100px; border: 2px solid #555;">
+  <main class="page">
 
-    <h1>Bilal Riaz</h1>
-    <p>PhD Candidate in Electrical and Computer Engineering, University of Delaware</p>
-    <p>Specializing in machine learning, optimal transport, and applied optimization</p>
+    <header class="intro">
+      <img class="portrait" src="assets/bilal.jpg" alt="Portrait of Bilal Riaz" width="132" height="132">
+      <div>
+        <h1>Bilal Riaz</h1>
+        <p class="role">Machine learning researcher, UNC Charlotte</p>
+      </div>
+    </header>
 
-    <p>
-      <a href="assets/Bilal_Riaz_CV.pdf">CV</a> /
-      <a href="https://scholar.google.com/citations?user=j8uWSdMAAAAJ&hl=en&oi=ao">Google Scholar</a> /
-      <a href="https://github.com/bilal092">GitHub</a> /
-      <a href="mailto:bilalria@udel.edu">Email</a>
+    <p class="lede">
+      I build methods that move probability mass where it should go: optimal
+      transport for comparing and aligning datasets, and finetuned diffusion
+      models that steer protein generation toward better antibodies.
     </p>
 
-    <h2>Publications</h2>
-    <ul>
-      <li><b>Partial Optimal Transport for Support Subset Selection</b><br>
-        Bilal Riaz, Yuksel Karahan, Austin J. Brockmeier<br>
-        <em>Transactions on Machine Learning Research, 2023</em>
-      </li>
-      <li><b>Kernel Landmarks: An Empirical Statistical Approach to Detect Covariate Shift</b><br>
-        Yuksel Karahan, Bilal Riaz, Austin J. Brockmeier<br>
-        <em>NeurIPS 2021 Workshop on Distribution Shifts</em>
-      </li>
-      <li><b>Optimal Control Methods for Quantum Gate Preparation: a comparative study</b><br>
-        Bilal Riaz, Cong Shuang, Shahid Qamar<br>
-        <em>Quantum Information Processing, 2019</em>
-      </li>
-      <li><b>Lyapunov based Control for one qubit Quantum gates in Coherence vector formulation</b><br>
-        Bilal Riaz, Cong Shuang, Shahid Qamar<br>
-        <em>Chinese Control Conference, 2018</em>
-      </li>
-      <li><b>Lyapunov-based feedback control of two-level stochastic open quantum systems</b><br>
-        Shahid Qamar, Cong Shuang, Bilal Riaz<br>
-        <em>IEEE CIS-RAM, 2017</em>
-      </li>
-      <li><b>Neural Optimal Transport for Subset Alignment</b><br>
-        Bilal Riaz, Austin J. Brockmeier<br>
-        <em>Under review</em>
-      </li>
-      <li><b>Finding Landmarks of Covariate Shift with Kernel Landmark Sliced Wasserstein Distance</b><br>
-        Yuksel Karahan, Bilal Riaz, Hau Phan, Matthew S. Emigh, Austin J. Brockmeier<br>
-        <em>Submitted to TMLR</em>
-      </li>
-      <li><b>Optimal Transport with Frequency Warping for Bags of Spectra</b><br>
-        Bilal Riaz, Austin J. Meek, Austin J. Brockmeier<br>
-        <em>Submitted to IEEE Open Journal of Signal Processing</em>
-      </li>
-      <li><b>Distributional Landmark for Detecting Multi-Mode Discrepancies</b><br>
-        Yuksel Karahan, Bilal Riaz, Matthew S. Emigh, Austin J. Brockmeier<br>
-        <em>Under review</em>
-      </li>
-    </ul>
+    <nav class="links" aria-label="Profiles">
+      <a href="assets/Bilal_Riaz_CV.pdf">CV</a>
+      <a href="https://scholar.google.com/citations?user=j8uWSdMAAAAJ&amp;hl=en">Google Scholar</a>
+      <a href="https://github.com/bilal092">GitHub</a>
+      <a href="mailto:bilalria@udel.edu">Email</a>
+    </nav>
 
-    <p>...see my <a href="assets/Bilal_Riaz_CV.pdf">CV</a> for full details.</p>
-  </div>
+    <figure class="flow">
+      <canvas id="flow" aria-label="Animated particles flowing from a Gaussian cloud into the shape of an antibody" role="img"></canvas>
+      <figcaption>
+        <span>Sliced Wasserstein flow: each step projects the particles onto a random
+        line, sorts them, and nudges each one toward its matched quantile of the target.</span>
+        <span class="targets" role="group" aria-label="Choose target distribution">
+          <button type="button" data-target="antibody" aria-pressed="true">Antibody</button>
+          <button type="button" data-target="initials" aria-pressed="false">Initials</button>
+          <button type="button" data-target="gaussian" aria-pressed="false">Gaussian</button>
+        </span>
+      </figcaption>
+    </figure>
+
+    <section class="research" aria-labelledby="research-h">
+      <h2 id="research-h">Research</h2>
+      <div class="threads">
+        <article>
+          <h3>Generative models for antibody design</h3>
+          <p>
+            I work on finetuning diffusion models for antibody CDR design,
+            using Feynman–Kac and sequential Monte Carlo ideas to tilt a
+            pretrained generator toward structures with desirable properties
+            without losing what it already knows.
+          </p>
+        </article>
+        <article>
+          <h3>Optimal transport for learning</h3>
+          <p>
+            My PhD work at the University of Delaware used partial, neural and
+            sliced optimal transport to select subsets, align distributions,
+            and find where two datasets disagree under covariate shift.
+          </p>
+        </article>
+      </div>
+      <p class="earlier">
+        Before machine learning, I worked on Lyapunov and optimal control of
+        quantum gates and open quantum systems.
+      </p>
+    </section>
+
+    <section class="pubs" aria-labelledby="pubs-h">
+      <h2 id="pubs-h">Publications</h2>
+
+      <h3 class="group">In review</h3>
+      <ol class="publist">
+        <li>
+          <span class="when" aria-hidden="true"></span>
+          <div>
+            <p class="title">Neural Optimal Transport for Subset Alignment</p>
+            <p class="authors"><b>Bilal Riaz</b>, Austin J. Brockmeier</p>
+            <p class="venue">Under review</p>
+          </div>
+        </li>
+        <li>
+          <span class="when" aria-hidden="true"></span>
+          <div>
+            <p class="title">Finding Landmarks of Covariate Shift with Kernel Landmark Sliced Wasserstein Distance</p>
+            <p class="authors">Yuksel Karahan, <b>Bilal Riaz</b>, Hau Phan, Matthew S. Emigh, Austin J. Brockmeier</p>
+            <p class="venue">Submitted to TMLR</p>
+          </div>
+        </li>
+        <li>
+          <span class="when" aria-hidden="true"></span>
+          <div>
+            <p class="title">Optimal Transport with Frequency Warping for Bags of Spectra</p>
+            <p class="authors"><b>Bilal Riaz</b>, Austin J. Meek, Austin J. Brockmeier</p>
+            <p class="venue">Submitted to IEEE Open Journal of Signal Processing</p>
+          </div>
+        </li>
+        <li>
+          <span class="when" aria-hidden="true"></span>
+          <div>
+            <p class="title">Distributional Landmark for Detecting Multi-Mode Discrepancies</p>
+            <p class="authors">Yuksel Karahan, <b>Bilal Riaz</b>, Matthew S. Emigh, Austin J. Brockmeier</p>
+            <p class="venue">Under review</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="group">Published</h3>
+      <ol class="publist">
+        <li>
+          <span class="when">2023</span>
+          <div>
+            <p class="title">Partial Optimal Transport for Support Subset Selection</p>
+            <p class="authors"><b>Bilal Riaz</b>, Yuksel Karahan, Austin J. Brockmeier</p>
+            <p class="venue">Transactions on Machine Learning Research</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2021</span>
+          <div>
+            <p class="title">Kernel Landmarks: An Empirical Statistical Approach to Detect Covariate Shift</p>
+            <p class="authors">Yuksel Karahan, <b>Bilal Riaz</b>, Austin J. Brockmeier</p>
+            <p class="venue">NeurIPS Workshop on Distribution Shifts</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2019</span>
+          <div>
+            <p class="title">Optimal Control Methods for Quantum Gate Preparation: A Comparative Study</p>
+            <p class="authors"><b>Bilal Riaz</b>, Cong Shuang, Shahid Qamar</p>
+            <p class="venue">Quantum Information Processing</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2018</span>
+          <div>
+            <p class="title">Lyapunov Based Control for One Qubit Quantum Gates in Coherence Vector Formulation</p>
+            <p class="authors"><b>Bilal Riaz</b>, Cong Shuang, Shahid Qamar</p>
+            <p class="venue">Chinese Control Conference</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2017</span>
+          <div>
+            <p class="title">Lyapunov-Based Feedback Control of Two-Level Stochastic Open Quantum Systems</p>
+            <p class="authors">Shahid Qamar, Cong Shuang, <b>Bilal Riaz</b></p>
+            <p class="venue">IEEE CIS-RAM</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="more">Full details are in my <a href="assets/Bilal_Riaz_CV.pdf">CV</a>.</p>
+    </section>
+
+    <footer class="foot">
+      <p>Built by hand and hosted on GitHub Pages.</p>
+    </footer>
+  </main>
+
+  <script>
+  (function () {
+    const canvas = document.getElementById('flow');
+    const ctx = canvas.getContext('2d');
+    const W = 900, H = 330, N = 2400;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---------- target sampling ----------
+    function gauss() {
+      let u = 0, v = 0;
+      while (u === 0) u = Math.random();
+      while (v === 0) v = Math.random();
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+    }
+    function gaussianCloud() {
+      const pts = new Float32Array(2 * N);
+      for (let i = 0; i < N; i++) {
+        pts[2 * i] = W / 2 + gauss() * 70;
+        pts[2 * i + 1] = H / 2 + gauss() * 55;
+      }
+      return pts;
+    }
+    function sampleShape(draw) {
+      const off = document.createElement('canvas');
+      off.width = W; off.height = H;
+      const o = off.getContext('2d');
+      o.fillStyle = '#000'; o.strokeStyle = '#000';
+      o.lineCap = 'round'; o.lineJoin = 'round';
+      draw(o);
+      const data = o.getImageData(0, 0, W, H).data;
+      const pool = [];
+      for (let y = 0; y < H; y += 2) {
+        for (let x = 0; x < W; x += 2) {
+          if (data[4 * (y * W + x) + 3] > 128) pool.push(x, y);
+        }
+      }
+      const pts = new Float32Array(2 * N);
+      const count = pool.length / 2;
+      for (let i = 0; i < N; i++) {
+        const k = Math.floor(Math.random() * count);
+        pts[2 * i] = pool[2 * k] + Math.random() * 2;
+        pts[2 * i + 1] = pool[2 * k + 1] + Math.random() * 2;
+      }
+      return pts;
+    }
+    function line(o, w, x1, y1, x2, y2) {
+      o.lineWidth = w; o.beginPath(); o.moveTo(x1, y1); o.lineTo(x2, y2); o.stroke();
+    }
+    const shapes = {
+      antibody: () => sampleShape(o => {
+        const cx = W / 2;
+        // heavy chains: stem plus two arms
+        line(o, 32, cx - 18, 312, cx - 18, 186);
+        line(o, 32, cx + 18, 312, cx + 18, 186);
+        line(o, 32, cx - 18, 186, cx - 148, 42);
+        line(o, 32, cx + 18, 186, cx + 148, 42);
+        // light chains running alongside each arm
+        line(o, 22, cx - 68, 176, cx - 196, 56);
+        line(o, 22, cx + 68, 176, cx + 196, 56);
+        // CDR loops at the tips
+        o.beginPath(); o.arc(cx - 172, 30, 26, 0, 2 * Math.PI); o.fill();
+        o.beginPath(); o.arc(cx + 172, 30, 26, 0, 2 * Math.PI); o.fill();
+      }),
+      initials: () => sampleShape(o => {
+        o.font = '800 250px "Bricolage Grotesque", Helvetica, Arial, sans-serif';
+        o.textAlign = 'center'; o.textBaseline = 'middle';
+        o.fillText('BR', W / 2, H / 2 + 12);
+      }),
+      gaussian: gaussianCloud
+    };
+
+    // ---------- sliced Wasserstein flow ----------
+    const P = gaussianCloud();
+    const speed = new Float32Array(N);
+    let T = null;
+    const idxP = new Uint32Array(N), idxT = new Uint32Array(N);
+    const projP = new Float32Array(N), projT = new Float32Array(N);
+
+    function step(lr) {
+      const a = Math.random() * Math.PI;
+      const dx = Math.cos(a), dy = Math.sin(a);
+      for (let i = 0; i < N; i++) {
+        projP[i] = P[2 * i] * dx + P[2 * i + 1] * dy;
+        projT[i] = T[2 * i] * dx + T[2 * i + 1] * dy;
+        idxP[i] = i; idxT[i] = i;
+      }
+      idxP.sort((i, j) => projP[i] - projP[j]);
+      idxT.sort((i, j) => projT[i] - projT[j]);
+      let total = 0;
+      for (let k = 0; k < N; k++) {
+        const i = idxP[k];
+        const d = (projT[idxT[k]] - projP[i]) * lr;
+        P[2 * i] += d * dx; P[2 * i + 1] += d * dy;
+        const s = Math.abs(d);
+        speed[i] = Math.max(speed[i] * 0.9, s);
+        total += s;
+      }
+      return total / N;
+    }
+
+    // ---------- drawing ----------
+    let scale = 1;
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const w = canvas.clientWidth;
+      scale = w / W;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(H * scale * dpr);
+      canvas.style.height = (H * scale) + 'px';
+      ctx.setTransform(dpr * scale, 0, 0, dpr * scale, 0, 0);
+      draw();
+    }
+    function draw() {
+      const css = getComputedStyle(document.documentElement);
+      const calm = css.getPropertyValue('--particle').trim();
+      const hot = css.getPropertyValue('--particle-moving').trim();
+      ctx.clearRect(0, 0, W, H);
+      const r = Math.max(1.6, 2.2 / scale);
+      for (let pass = 0; pass < 2; pass++) {
+        ctx.fillStyle = pass === 0 ? calm : hot;
+        for (let i = 0; i < N; i++) {
+          const moving = speed[i] > 0.6;
+          if ((pass === 1) !== moving) continue;
+          ctx.fillRect(P[2 * i] - r / 2, P[2 * i + 1] - r / 2, r, r);
+        }
+      }
+    }
+
+    let running = false;
+    function loop() {
+      let m = 0;
+      for (let s = 0; s < 4; s++) m = step(0.3);
+      draw();
+      if (m > 0.04) requestAnimationFrame(loop);
+      else { speed.fill(0); draw(); running = false; }
+    }
+    function setTarget(name) {
+      T = shapes[name]();
+      if (reduce) {
+        for (let k = 0; k < 400; k++) step(0.5);
+        speed.fill(0); draw(); return;
+      }
+      if (!running) { running = true; requestAnimationFrame(loop); }
+    }
+
+    document.querySelectorAll('.targets button').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.targets button')
+          .forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+        setTarget(b.dataset.target);
+      });
+    });
+    window.addEventListener('resize', resize);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+
+    resize();
+    const start = () => setTimeout(() => setTarget('antibody'), reduce ? 0 : 450);
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(start);
+  })();
+  </script>
 </body>
-
 </html>
